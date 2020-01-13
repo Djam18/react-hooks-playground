@@ -4,6 +4,8 @@ import Counter from './01-useState/Counter';
 import Toggle from './01-useState/Toggle';
 import FormInput from './01-useState/FormInput';
 import ColorPicker from './01-useState/ColorPicker';
+import DataFetcher from './02-useEffect/DataFetcher';
+import Timer from './02-useEffect/Timer';
 
 function App() {
   return (
@@ -16,6 +18,10 @@ function App() {
       <Toggle />
       <FormInput />
       <ColorPicker />
+
+      <h2>02 - useEffect</h2>
+      <DataFetcher />
+      <Timer />
     </div>
   );
 }
