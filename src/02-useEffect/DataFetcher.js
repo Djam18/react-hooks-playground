@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// V1: BUGGE! Race condition + pas d'AbortController
-// j'ai passe 2h a debugger pourquoi ca faisait des infinite loops
+// FIX: AbortController pour canceller le fetch si le composant est unmount
+// j'ai lu la doc React... c'est comme signal en Django DRF
 function DataFetcher() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -9,22 +9,32 @@ function DataFetcher() {
   console.log('DataFetcher rendered');
 
   useEffect(() => {
-    // TODO: pourquoi [] ici? si je mets rien ca boucle a l'infini
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    const controller = new AbortController();
+
+    fetch('https://jsonplaceholder.typicode.com/posts', { signal: controller.signal })
       .then(res => res.json())
       .then(data => {
         console.log('data fetched:', data.length, 'items');
         setData(data);
         setLoading(false);
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          console.log('fetch aborted');
+          return;
+        }
+        console.error('fetch error:', err);
+        setLoading(false);
       });
-    // pas de cleanup - je sais pas encore que c'est necessaire
-  }, []); // [] = run only once, like componentDidMount
+
+    return () => controller.abort(); // cleanup: cancel the fetch on unmount
+  }, []);
 
   if (loading) return <p>Loading...</p>;
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', margin: '10px' }}>
-      <h3>Data Fetcher</h3>
+      <h3>Data Fetcher (fixed)</h3>
       <p>Fetched {data.length} posts</p>
       <ul style={{ maxHeight: '200px', overflow: 'auto' }}>
         {data.slice(0, 5).map(post => (
