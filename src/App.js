@@ -6,6 +6,8 @@ import FormInput from './01-useState/FormInput';
 import ColorPicker from './01-useState/ColorPicker';
 import DataFetcher from './02-useEffect/DataFetcher';
 import Timer from './02-useEffect/Timer';
+import WindowResize from './02-useEffect/WindowResize';
+import DocumentTitle from './02-useEffect/DocumentTitle';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <h2>02 - useEffect</h2>
       <DataFetcher />
       <Timer />
+      <WindowResize />
+      <DocumentTitle />
     </div>
   );
 }
