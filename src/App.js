@@ -12,6 +12,8 @@ import Timer from './02-useEffect/Timer';
 import WindowResize from './02-useEffect/WindowResize';
 import DocumentTitle from './02-useEffect/DocumentTitle';
 import ContextDemo from './03-useContext/ContextDemo';
+import TodoApp from './04-useReducer/TodoApp';
+import ShoppingCart from './04-useReducer/ShoppingCart';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -37,6 +39,10 @@ function App() {
 
             <h2>03 - useContext</h2>
             <ContextDemo />
+
+            <h2>04 - useReducer</h2>
+            <TodoApp />
+            <ShoppingCart />
           </div>
         </LocaleProvider>
       </AuthProvider>
