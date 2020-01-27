@@ -14,6 +14,7 @@ import DocumentTitle from './02-useEffect/DocumentTitle';
 import ContextDemo from './03-useContext/ContextDemo';
 import TodoApp from './04-useReducer/TodoApp';
 import ShoppingCart from './04-useReducer/ShoppingCart';
+import FormWizard from './04-useReducer/FormWizard';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <h2>04 - useReducer</h2>
             <TodoApp />
             <ShoppingCart />
+            <FormWizard />
           </div>
         </LocaleProvider>
       </AuthProvider>
