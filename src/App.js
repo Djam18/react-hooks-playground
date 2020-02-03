@@ -15,6 +15,9 @@ import ContextDemo from './03-useContext/ContextDemo';
 import TodoApp from './04-useReducer/TodoApp';
 import ShoppingCart from './04-useReducer/ShoppingCart';
 import FormWizard from './04-useReducer/FormWizard';
+import ExpensiveList from './05-perf-hooks/ExpensiveList';
+import SearchFilter from './05-perf-hooks/SearchFilter';
+import MemoDemo from './05-perf-hooks/MemoDemo';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -45,6 +48,11 @@ function App() {
             <TodoApp />
             <ShoppingCart />
             <FormWizard />
+
+            <h2>05 - perf hooks (useMemo, useCallback)</h2>
+            <ExpensiveList />
+            <SearchFilter />
+            <MemoDemo />
           </div>
         </LocaleProvider>
       </AuthProvider>
