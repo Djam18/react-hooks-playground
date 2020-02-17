@@ -18,6 +18,10 @@ import FormWizard from './04-useReducer/FormWizard';
 import ExpensiveList from './05-perf-hooks/ExpensiveList';
 import SearchFilter from './05-perf-hooks/SearchFilter';
 import MemoDemo from './05-perf-hooks/MemoDemo';
+import FocusInput from './07-useRef/FocusInput';
+import PreviousValue from './07-useRef/PreviousValue';
+import StopwatchRef from './07-useRef/StopwatchRef';
+import VideoPlayer from './07-useRef/VideoPlayer';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -53,6 +57,12 @@ function App() {
             <ExpensiveList />
             <SearchFilter />
             <MemoDemo />
+
+            <h2>07 - useRef</h2>
+            <FocusInput />
+            <PreviousValue />
+            <StopwatchRef />
+            <VideoPlayer />
           </div>
         </LocaleProvider>
       </AuthProvider>
