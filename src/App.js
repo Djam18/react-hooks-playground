@@ -24,6 +24,7 @@ import StopwatchRef from './07-useRef/StopwatchRef';
 import VideoPlayer from './07-useRef/VideoPlayer';
 import FlashCards from './08-roadmap-projects/FlashCards';
 import Quiz from './08-roadmap-projects/QuizApp/Quiz';
+import Weather from './08-roadmap-projects/WeatherApp/Weather';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -69,6 +70,7 @@ function App() {
             <h2>08 - roadmap.sh Projects</h2>
             <FlashCards />
             <Quiz />
+            <Weather />
           </div>
         </LocaleProvider>
       </AuthProvider>
