@@ -25,6 +25,7 @@ import VideoPlayer from './07-useRef/VideoPlayer';
 import FlashCards from './08-roadmap-projects/FlashCards';
 import Quiz from './08-roadmap-projects/QuizApp/Quiz';
 import Weather from './08-roadmap-projects/WeatherApp/Weather';
+import Explorer from './08-roadmap-projects/GithubExplorer/Explorer';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -71,6 +72,7 @@ function App() {
             <FlashCards />
             <Quiz />
             <Weather />
+            <Explorer />
           </div>
         </LocaleProvider>
       </AuthProvider>
