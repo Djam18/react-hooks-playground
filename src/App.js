@@ -26,6 +26,7 @@ import FlashCards from './08-roadmap-projects/FlashCards';
 import Quiz from './08-roadmap-projects/QuizApp/Quiz';
 import Weather from './08-roadmap-projects/WeatherApp/Weather';
 import Explorer from './08-roadmap-projects/GithubExplorer/Explorer';
+import Pomodoro from './08-roadmap-projects/PomodoroTimer/Pomodoro';
 
 // provider hell - j'empile 3 providers... il doit y avoir mieux
 function App() {
@@ -73,6 +74,7 @@ function App() {
             <Quiz />
             <Weather />
             <Explorer />
+            <Pomodoro />
           </div>
         </LocaleProvider>
       </AuthProvider>
