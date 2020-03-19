@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 
 // useMemo pour filtrer une liste de 10000 items
-// PROBLEME: j'utilise useMemo meme pour des calculs simples... je sais pas encore
-// que la plupart des memoizations sont inutiles
+// fix: j'avais useMemo sur total et title - c'etait inutile
+// useMemo est utile SEULEMENT quand le calcul est vraiment couteux
 const generateItems = () => Array.from({ length: 10000 }, (_, i) => ({
   id: i,
   name: `Item ${i}`,
@@ -18,9 +18,9 @@ function ExpensiveList() {
 
   console.log('ExpensiveList rendered');
 
-  // useMemo pour eviter de re-filtrer 10000 items a chaque render
+  // useMemo JUSTIFIE: filtrer 10000 items a chaque render = couteux
   const filteredItems = useMemo(() => {
-    console.log('filtering items...'); // pour voir quand ca recalcule
+    console.log('filtering items...');
     return ALL_ITEMS.filter(item => {
       const matchesFilter = item.name.toLowerCase().includes(filter.toLowerCase());
       const matchesCategory = category === 'all' || item.category === category;
@@ -28,15 +28,9 @@ function ExpensiveList() {
     });
   }, [filter, category]);
 
-  // useMemo pour la somme aussi - probablement inutile pour un simple reduce
-  const total = useMemo(() => {
-    return filteredItems.reduce((sum, item) => sum + item.value, 0);
-  }, [filteredItems]);
-
-  // useMemo pour le titre - c'est CLAIREMENT inutile mais je le fais quand meme
-  const title = useMemo(() => {
-    return `Showing ${filteredItems.length} of ${ALL_ITEMS.length} items`;
-  }, [filteredItems.length]);
+  // fix: ces deux useMemo etaient inutiles - calculs triviaux
+  const total = filteredItems.reduce((sum, item) => sum + item.value, 0);
+  const title = `Showing ${filteredItems.length} of ${ALL_ITEMS.length} items`;
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', margin: '10px' }}>

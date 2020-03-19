@@ -1,10 +1,11 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 
 // React.memo avec useCallback
-// je commence a comprendre mais j'abuse encore
+// fix: retire le useMemo inutile sur doubleParent
+// regle apprise: useMemo pour calculs couteux, pas pour `x * 2`
 
 const Child = React.memo(function Child({ count, onIncrement }) {
-  console.log('Child rendered, count:', count); // pour compter les re-renders
+  console.log('Child rendered, count:', count);
   return (
     <div style={{ padding: '10px', backgroundColor: '#f5f5f5', borderRadius: '4px' }}>
       <p>Child count: {count}</p>
@@ -22,14 +23,10 @@ function MemoDemo() {
   // useCallback = Child ne re-render pas quand parentCount change
   const handleChildIncrement = useCallback(() => {
     setChildCount(c => c + 1);
-  }, []); // stable ref
+  }, []);
 
-  // useMemo inutile ici - parentCount * 2 est trivial
-  // mais je le fais quand meme parce que j'ai pas encore compris
-  const doubleParent = useMemo(() => {
-    console.log('computing doubleParent...');
-    return parentCount * 2;
-  }, [parentCount]);
+  // fix: parentCount * 2 est trivial, pas besoin de useMemo
+  const doubleParent = parentCount * 2;
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', margin: '10px' }}>
@@ -40,7 +37,7 @@ function MemoDemo() {
       </button>
       <p style={{ fontSize: '12px', color: '#666' }}>
         Watch the console: Child does NOT re-render when Parent increments.
-        That's the point of React.memo + useCallback.
+        useCallback keeps the function reference stable.
       </p>
       <Child count={childCount} onIncrement={handleChildIncrement} />
     </div>
