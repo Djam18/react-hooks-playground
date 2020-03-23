@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// FIX: ajoute le cleanup! les side effects c'est comme les context managers Python
-// with open('file') as f: -> le cleanup se fait automatiquement
+// FIX: added cleanup! side effects are like Python context managers
+// with open('file') as f: -> cleanup happens automatically
 // useEffect(() => { ... return cleanup; }) -> pareil!
 function Timer() {
   const [seconds, setSeconds] = useState(0);
@@ -16,7 +16,7 @@ function Timer() {
       setSeconds(s => s + 1);
     }, 1000);
 
-    return () => clearInterval(interval); // CLEANUP! sans ca le timer continue apres unmount
+    return () => clearInterval(interval); // CLEANUP! without this the timer keeps running after unmount
   }, [running]);
 
   return (

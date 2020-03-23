@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useRef } from 'react';
 
 // roadmap.sh "Pomodoro Timer"
-// useReducer ici c'est parfait - plusieurs etats interconnectes
+// useReducer is perfect here - multiple interconnected states
 // TICK, START, PAUSE, RESET, SWITCH_MODE
 const MODES = {
   work: { label: 'Work', duration: 25 * 60, color: '#e53935' },
@@ -65,8 +65,8 @@ function Pomodoro() {
 
   console.log('Pomodoro rendered, mode:', state.mode, 'running:', state.isRunning, 'left:', state.timeLeft);
 
-  // gerer le tick avec useEffect + useRef pour eviter les memory leaks
-  // j'ai appris ma lecon avec Timer.js !
+  // handle tick with useEffect + useRef to avoid memory leaks
+  // learned my lesson from Timer.js!
   useEffect(() => {
     if (state.isRunning) {
       intervalRef.current = setInterval(() => {
@@ -78,7 +78,7 @@ function Pomodoro() {
     return () => clearInterval(intervalRef.current);
   }, [state.isRunning]);
 
-  // detecter la fin du timer
+  // detect timer completion
   useEffect(() => {
     if (state.timeLeft === 0 && state.isRunning) {
       dispatch({ type: 'COMPLETE' });

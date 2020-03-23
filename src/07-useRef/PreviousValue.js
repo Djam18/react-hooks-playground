@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// useRef pour tracker la valeur precedente
-// ref ne cause pas de re-render quand on la modifie - c'est la difference avec state
+// useRef to track the previous value
+// ref doesn't cause re-render when modified - that's the difference with state
 function usePrevious(value) {
   const ref = useRef();
 
   useEffect(() => {
-    ref.current = value; // s'execute APRES le render
+    ref.current = value; // runs AFTER the render
   });
 
-  return ref.current; // retourne la valeur AVANT le render courant
+  return ref.current; // returns value from BEFORE the current render
 }
 
 function PreviousValue() {

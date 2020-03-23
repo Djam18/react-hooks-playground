@@ -1,4 +1,4 @@
-// GitHub API - encore une fois: CLI Python → React frontend. La boucle.
+// GitHub API - full circle: Python CLI → React frontend.
 export async function searchRepos(query, language = '') {
   let url = `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}`;
   if (language) url += `+language:${language}`;
@@ -6,8 +6,8 @@ export async function searchRepos(query, language = '') {
 
   const res = await fetch(url, {
     headers: { 'Accept': 'application/vnd.github.v3+json' }
-    // TODO: ajouter auth token pour eviter rate limiting
-    // 'Authorization': 'token ghp_xxx' <- non! pas dans le code!
+    // TODO: add auth token to avoid rate limiting
+    // 'Authorization': 'token ghp_xxx' <- no! not in code!
   });
 
   if (!res.ok) throw new Error(`GitHub API: ${res.status}`);

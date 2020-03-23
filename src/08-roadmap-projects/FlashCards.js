@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 // roadmap.sh "Flash Cards" - beginner project
-// useState pour la carte courante et le score
-// CSS flip animation avec transform: rotateY
+// useState for the current card and score
+// CSS flip animation with transform: rotateY
 const deck = [
   { id: 1, question: 'What is a React Hook?', answer: 'A function that lets you use state and other React features in function components.' },
   { id: 2, question: 'What does useState return?', answer: 'An array with the current state value and a function to update it.' },

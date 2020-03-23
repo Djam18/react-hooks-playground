@@ -4,7 +4,7 @@ import Question from './Question';
 import QuizTimer from './Timer';
 import Results from './Results';
 
-// useReducer brille ici: NEXT_QUESTION, ANSWER, FINISH
+// useReducer shines here: NEXT_QUESTION, ANSWER, FINISH
 // { currentQuestion, answers, score, status }
 function quizReducer(state, action) {
   switch (action.type) {

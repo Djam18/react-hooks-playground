@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import useDebounce from '../../06-custom-hooks/useDebounce';
 
-// utilise mon propre useDebounce custom hook!
+// using my own useDebounce custom hook!
 function SearchBar({ onSearch }) {
   const [value, setValue] = useState('');
   const debounced = useDebounce(value, 500);
 
-  // useEffect pour lancer la recherche quand debounced change
+  // useEffect to trigger search when debounced value changes
   React.useEffect(() => {
     if (debounced.trim()) {
       console.log('searching for:', debounced);
       onSearch(debounced);
     }
   }, [debounced]); // eslint-disable-line react-hooks/exhaustive-deps
-  // onSearch devrait etre dans les deps mais ca cause une infinite loop
-  // je comprends pas encore pourquoi... useCallback chez l'appelant?
+  // onSearch should be in deps but causes an infinite loop
+  // don't understand why yet... useCallback at the call site?
 
   return (
     <div style={{ marginBottom: '15px' }}>

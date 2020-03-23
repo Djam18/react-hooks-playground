@@ -1,7 +1,7 @@
 import React, { useReducer, useState } from 'react';
 
-// useReducer brille ici. C'est comme un ViewSet Django!
-// action.type = comme les URL patterns
+// useReducer shines here. It's like a Django ViewSet!
+// action.type = like URL patterns
 // ADD_TODO = POST /todos
 // DELETE_TODO = DELETE /todos/:id
 // TOGGLE_TODO = PATCH /todos/:id

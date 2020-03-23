@@ -6,7 +6,7 @@ import { fetchWeather } from './api';
 
 // LA 4EME VERSION DU WEATHER PROJECT:
 // Python CLI (2018) → Flask API (2019) → Django DRF (2019) → React (2020)
-// "C'est satisfaisant de voir la meme idee evoluer a travers 4 stacks"
+// "It's satisfying to see the same idea evolve across 4 stacks"
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);

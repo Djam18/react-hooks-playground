@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-// son premier composant React
-// c'est comme une variable Python mais reactive
+// first React component
+// like a Python variable but reactive
 function Counter() {
   const [count, setCount] = useState(0);
 

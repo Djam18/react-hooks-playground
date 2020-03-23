@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 
-// PROBLEME: le reducer fait 100 lignes (trop gros)
-// pas de validation non plus... je la mettrai plus tard
+// PROBLEM: the reducer is 100 lines long (too big)
+// no validation either... I'll add it later
 const STEPS = ['personal', 'address', 'payment', 'review'];
 
 function formReducer(state, action) {

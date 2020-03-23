@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useMemo } from 'react';
 
-// useCallback pour stabiliser les refs dans les child props
-// je comprends pas encore exactement pourquoi... mais ca "marche"
+// useCallback to stabilize refs in child props
+// don't fully understand why yet... but it "works"
 
 const ResultItem = React.memo(function ResultItem({ item, onSelect }) {
-  console.log('ResultItem rendered:', item.name); // pour voir les re-renders
+  console.log('ResultItem rendered:', item.name); // watching re-renders
   return (
     <li
       onClick={() => onSelect(item)}
@@ -27,14 +27,14 @@ function SearchFilter() {
 
   console.log('SearchFilter rendered');
 
-  // useCallback pour que ResultItem.memo marche correctement
-  // sans ca, onSelect est une nouvelle fonction a chaque render -> re-render inutile
+  // useCallback so ResultItem.memo works correctly
+  // without this, onSelect is a new function every render -> unnecessary re-render
   const handleSelect = useCallback((item) => {
     console.log('selected:', item.name);
     setSelected(item);
-  }, []); // [] = la fonction ne change jamais
+  }, []); // [] = the function never changes
 
-  // useMemo pour le filtrage - ok c'est utile ici
+  // useMemo for filtering - ok this is actually useful here
   const filtered = useMemo(() => {
     return items.filter(i => i.name.toLowerCase().includes(query.toLowerCase()));
   }, [query]);

@@ -6,7 +6,7 @@ const products = [
   { id: 3, name: 'Mechanical Keyboard', price: 89.99 },
 ];
 
-// je mets TOUT dans un seul state - je sais pas encore que c'est trop complex
+// putting EVERYTHING in one state - don't know yet that this is too complex
 function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD_ITEM': {

@@ -11,7 +11,7 @@ function Toggle() {
       <button onClick={() => setShow(!show)}>
         {show ? 'Hide' : 'Show'} content
       </button>
-      {/* CSS inline... je sais pas trop comment faire avec des classes */}
+      {/* CSS inline... not sure how to do this with classes yet */}
       <div style={{ display: show ? 'block' : 'none', marginTop: '10px', backgroundColor: '#e0e0e0', padding: '10px' }}>
         <p>Hidden content revealed!</p>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// controlled input - en Django le form gere tout. Ici je dois tout faire a la main.
+// controlled input - in Django the form handles everything. Here I have to do it all manually.
 function FormInput() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

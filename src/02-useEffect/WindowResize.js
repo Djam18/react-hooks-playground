@@ -15,7 +15,7 @@ function WindowResize() {
 
     window.addEventListener('resize', handleResize);
 
-    // cleanup: removeEventListener sinon on accumule des listeners!
+    // cleanup: removeEventListener otherwise listeners keep stacking up!
     return () => window.removeEventListener('resize', handleResize);
   }, []); // [] = setup once
 

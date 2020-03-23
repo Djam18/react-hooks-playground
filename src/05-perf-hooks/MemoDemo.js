@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 
 // React.memo avec useCallback
-// fix: retire le useMemo inutile sur doubleParent
-// regle apprise: useMemo pour calculs couteux, pas pour `x * 2`
+// fix: removed unnecessary useMemo on doubleParent
+// lesson learned: useMemo for expensive computations, not for `x * 2`
 
 const Child = React.memo(function Child({ count, onIncrement }) {
   console.log('Child rendered, count:', count);
@@ -20,12 +20,12 @@ function MemoDemo() {
 
   console.log('MemoDemo rendered');
 
-  // useCallback = Child ne re-render pas quand parentCount change
+  // useCallback = Child doesn't re-render when parentCount changes
   const handleChildIncrement = useCallback(() => {
     setChildCount(c => c + 1);
   }, []);
 
-  // fix: parentCount * 2 est trivial, pas besoin de useMemo
+  // fix: parentCount * 2 is trivial, no need for useMemo
   const doubleParent = parentCount * 2;
 
   return (

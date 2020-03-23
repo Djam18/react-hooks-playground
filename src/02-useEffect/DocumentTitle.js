@@ -6,14 +6,14 @@ function DocumentTitle() {
   console.log('DocumentTitle rendered');
 
   useEffect(() => {
-    // mettre a jour le titre de la page
+    // update the page title
     document.title = `Count: ${count} - React Hooks Playground`;
 
-    // cleanup: remettre le titre original
+    // cleanup: restore original title
     return () => {
       document.title = 'React Hooks Playground';
     };
-  }, [count]); // re-run quand count change
+  }, [count]); // re-run when count changes
 
   return (
     <div style={{ border: '1px solid #ccc', padding: '20px', margin: '10px' }}>

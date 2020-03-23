@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 
-// useMemo pour filtrer une liste de 10000 items
-// fix: j'avais useMemo sur total et title - c'etait inutile
-// useMemo est utile SEULEMENT quand le calcul est vraiment couteux
+// useMemo to filter a list of 10000 items
+// fix: had useMemo on total and title - that was unnecessary
+// useMemo is useful ONLY when the computation is actually expensive
 const generateItems = () => Array.from({ length: 10000 }, (_, i) => ({
   id: i,
   name: `Item ${i}`,
@@ -28,7 +28,7 @@ function ExpensiveList() {
     });
   }, [filter, category]);
 
-  // fix: ces deux useMemo etaient inutiles - calculs triviaux
+  // fix: these two useMemos were unnecessary - trivial computations
   const total = filteredItems.reduce((sum, item) => sum + item.value, 0);
   const title = `Showing ${filteredItems.length} of ${ALL_ITEMS.length} items`;
 

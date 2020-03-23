@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 
-// setInterval avec useRef
-// sans ref: chaque render recrée une nouvelle reference a l'interval
-// la ref persiste entre les renders sans provoquer de re-render
+// setInterval with useRef
+// without ref: every render creates a new reference to the interval
+// the ref persists between renders without triggering re-render
 function StopwatchRef() {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);

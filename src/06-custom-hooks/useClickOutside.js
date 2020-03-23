@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 // useRef + useEffect + document.addEventListener
-// utile pour les dropdowns, modals
-// cleanup propre avec removeEventListener
+// useful for dropdowns, modals
+// clean cleanup with removeEventListener
 function useClickOutside(ref, callback) {
   useEffect(() => {
     const handleClick = (event) => {

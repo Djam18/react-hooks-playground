@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
-// useRef pour contrôler un element video de facon imperative
-// parfois l'approche imperative est la bonne!
+// useRef to control a video element imperatively
+// sometimes the imperative approach is the right one!
 function VideoPlayer() {
   const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);

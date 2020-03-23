@@ -1,4 +1,4 @@
-// 10 questions sur Python - je teste mes propres connaissances
+// 10 Python questions - testing my own knowledge
 const questions = [
   { id: 1, question: 'What is a Python decorator?', options: ['A design pattern', 'A function that modifies another function', 'A class method', 'A module import'], correct: 1 },
   { id: 2, question: 'Which keyword creates a generator?', options: ['return', 'async', 'yield', 'generator'], correct: 2 },

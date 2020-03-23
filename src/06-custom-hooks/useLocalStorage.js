@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // useState + localStorage sync
-// ca ressemble a un decorator Python!
+// feels like a Python decorator!
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {

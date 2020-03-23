@@ -1,4 +1,4 @@
-// Visual Crossing API - meme API que toutes les versions precedentes
+// Visual Crossing API - same API as all previous versions
 // Python CLI → Flask API → Django DRF → React frontend
 // LA 4EME VERSION DU WEATHER PROJECT!
 const API_KEY = 'DEMO_KEY'; // TODO: mettre dans .env

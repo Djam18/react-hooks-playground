@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// FIX: AbortController pour canceller le fetch si le composant est unmount
-// j'ai lu la doc React... c'est comme signal en Django DRF
+// FIX: AbortController to cancel the fetch if component unmounts
+// read the React docs... it's like signal in Django DRF
 function DataFetcher() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

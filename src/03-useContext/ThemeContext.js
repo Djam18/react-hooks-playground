@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
-// ca ressemble au middleware Django. J'aime.
+// feels like Django middleware. I like it.
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {

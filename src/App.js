@@ -28,7 +28,7 @@ import Weather from './08-roadmap-projects/WeatherApp/Weather';
 import Explorer from './08-roadmap-projects/GithubExplorer/Explorer';
 import Pomodoro from './08-roadmap-projects/PomodoroTimer/Pomodoro';
 
-// provider hell - j'empile 3 providers... il doit y avoir mieux
+// provider hell - stacking 3 providers... there must be a better way
 function App() {
   return (
     <ThemeProvider>
