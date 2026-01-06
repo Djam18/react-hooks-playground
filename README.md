@@ -1,8 +1,8 @@
 # React Hooks Playground
 
-Notes from a Python/Django developer learning React Hooks — Jan–Mar 2020.
+Learning journal: from Python/Django developer discovering React Hooks (Jan 2020) to React 19 master (Jan 2026).
 
-React 16.13 | Create React App | JavaScript (no TypeScript yet)
+React 16.13 → 19.1 | CRA → Vite 6 | JavaScript → TypeScript strict | v3.0.0
 
 ---
 
@@ -117,9 +117,27 @@ npm start
 
 ---
 
-## What's next
+## Chapter Map
 
-- TypeScript migration
-- Replace CSS inline with CSS modules or styled-components
-- Add tests (React Testing Library)
-- react-design-patterns repo (patterns like HOC, Render Props, Compound Components)
+| Folder | Added | Concept | React Era |
+|--------|-------|---------|-----------|
+| 01-useState | Jan 2020 | Counter, Toggle, Form, ColorPicker | 16.13 |
+| 02-useEffect | Jan 2020 | DataFetcher, Timer (with cleanup) | 16.13 |
+| 03-useContext | Feb 2020 | ThemeContext, LanguageContext | 16.13 |
+| 04-useReducer | Feb 2020 | Todo, ShoppingCart | 16.13 |
+| 05-perf-hooks | Feb 2020 | useMemo, useCallback, React.memo | 16.13 |
+| 06-custom-hooks | Mar 2020 | useLocalStorage, useFetch, useDebounce | 16.13 |
+| 07-useRef | Mar 2020 | DOM access, stopwatch, previousValue | 16.13 |
+| 08-roadmap-projects | Mar 2020 | FlashCards, QuizApp, Weather, GithubExplorer, Pomodoro | 16.13 |
+| 09-react18 | Apr 2022 | useTransition, useDeferredValue, auto batching | 18.0 |
+| 10-react19 | Feb 2025 | use(), useFormStatus, useActionState, useOptimistic | 19.0 |
+| 11-compiler | Oct 2025 | React Compiler auto-memo demo | 19.x |
+
+## Running
+
+```bash
+npm install
+npm run dev     # Vite dev server
+npm test        # Vitest
+npm run build   # TypeScript check + Vite build
+```
